@@ -1,34 +1,41 @@
-let yourmove = "Paper";
+const prompt = require ("prompt-sync")();
+let yourMove = prompt("rock, paper or scissors?: ");
+let computerMove=pickComputerMove();
+while(!(yourMove==="rock"||yourMove==="paper"||yourMove==="scissors")){
+    yourMove = prompt("please type 'rock', 'paper' or 'scissors': ");
+}
+let result = decideWinner(computerMove,yourMove);
+
+console.log(`you: ${yourMove} - computer: ${computerMove}.`);
+console.log(result);
+
 function pickComputerMove(){
     let rand = Math.random()
     let move ="";
-    console.log(rand);
     if(rand>=0&&rand<=1/3){
-        move = "Rock";
+        move = "rock";
     } else if(rand>1/3&&rand<=2/3){
-        move = "Paper";
+        move = "paper";
     }else{
-        move = "Scissors";
+        move = "scissors";
     }
     return move;
 }
 
-let computermove=pickComputerMove();
-
-function decideWinner(computermove,yourmove){
-    if(computermove===yourmove){
+function decideWinner(computerMove,yourMove){
+    if(computerMove===yourMove){
         return "draw";
-    }else if(computermove==="Rock"&&yourmove==="Paper"){
+    }else if(computerMove==="rock"&&yourMove==="paper"){
         return "you win";
-    }else if(yourmove==="Rock"&&computermove==="Paper"){
+    }else if(yourMove==="rock"&&computerMove==="paper"){
         return "you Lose";
-    }else if(computermove==="Scissors"&&yourmove==="Paper"){
+    }else if(computerMove==="scissors"&&yourMove==="paper"){
         return "you win";
-    }else if(yourmove==="Scissors"&&computermove==="Paper"){
+    }else if(yourMove==="scissors"&&computerMove==="paper"){
         return "you win";
-    }else if(computermove==="Scissors"&&yourmove==="Rock"){
+    }else if(computerMove==="scissors"&&yourMove==="rock"){
         return "you win";
-    }else if(yourmove==="Scissors"&&computermove==="Rock"){
+    }else if(yourMove==="scissors"&&computerMove==="rock"){
         return "you Lose";
     }
 }
