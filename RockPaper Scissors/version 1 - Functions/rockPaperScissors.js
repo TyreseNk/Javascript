@@ -1,4 +1,5 @@
 const prompt = require ("prompt-sync")();
+
 let yourMove = prompt("rock, paper or scissors?: ");
 let computerMove=pickComputerMove();
 while(!(yourMove==="rock"||yourMove==="paper"||yourMove==="scissors")){
@@ -9,6 +10,7 @@ let result = decideWinner(computerMove,yourMove);
 console.log(`you: ${yourMove} - computer: ${computerMove}.`);
 console.log(result);
 
+//functies
 function pickComputerMove(){
     let rand = Math.random()
     let move ="";
