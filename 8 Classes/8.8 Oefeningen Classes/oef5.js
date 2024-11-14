@@ -11,8 +11,7 @@ class User {
 
 class Admin extends User {
     constructor(name,email,privileges){
-        this._name = name;
-        this._email = email;
+        super(name,email);
         this._privileges = privileges
     }
 
