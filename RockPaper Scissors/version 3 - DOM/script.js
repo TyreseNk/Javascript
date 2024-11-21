@@ -56,10 +56,8 @@ function updateObject (result){
         case "lose" : 
             score.Losses++;
         break;
-        case "draw":
-            score.draws++;
-        break;
         default:
+            score.draws++;
         break;
     }
 }
