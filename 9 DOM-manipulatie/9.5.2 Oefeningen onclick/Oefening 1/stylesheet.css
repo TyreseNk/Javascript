@@ -1,0 +1,9 @@
+#subscribe-button{
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    background: black;
+    color: white;
+    border: black 3px solid;
+    border-radius: 15px; 
+}
